@@ -1,0 +1,42 @@
+body {
+  background-color : green;
+  text-align : center;
+}
+h1 {
+  text-align : center;
+  font-family : impact, 'arial black';
+  font-size : 30pt;
+  color : #ffdbd3;
+}
+a {
+  color : #ffdbd3;
+  font-family : 'times new roman';
+  font-size : 17pt;
+}
+p {
+  text-align : center;
+  margin-left : 1in;
+  margin-right : 1in;
+  font-family : 'arial black', verdana, sans-serif;
+  font-size: 13pt;
+}
+h6 {
+  color : red;
+  text-align : center;
+  font-family : 'comic sans ms'
+}
+ol {
+  color : #ffdbd3;
+  text-align: left;
+  margin-left : 45%;
+  font-family : verdana, 'lucida sans unicode', 'trebuchet ms';
+  font-size : 13pt;
+}
+img {
+  max-width: 50%;
+  opacity: 0.90;
+  text-align : center;
+}
+text {
+  color : #e460ff;
+}

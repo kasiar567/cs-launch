@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>
+    Kasia's WPI Page
+  </title>
+    <link rel = "stylesheet" type = "text/css" href = "mystyle.css"> </link> <!--- external stylesheet--->
+<script type = "text/javascript">
+  // Finds the tag with specified id and changes its color.
+    var color_changed = [0, 0];
+      function changeColor (id, newColor) {
+        var element = document.getElementById(id);
+        element.style.color = newColor;
+      }
+      // Every time this function is called, it changes the color
+      // of the specified id between two colors
+      function toggleColor (id, which_element, color1, color2) {
+        console.log('clicked');
+        if(color_changed[which_element] == 0){
+          changeColor(id, color1);
+          color_changed[which_element] = 1;
+        }
+        else{
+          changeColor(id, color2);
+          color_changed[which_element] = 0;
+        }
+      }
+
+      // Every time this function is called, it changes the color
+      // of the specified id between two colors
+      function toggleColor2 (id, color1, color2) {
+        console.log('clicked');
+        var element = document.getElementById(id);
+        if(element.style.color == color1){
+          changeColor(id, color2);
+        }
+        else{
+          changeColor(id, color1);
+        }
+      }
+  </script>
+</head>
+<body>
+  <style>
+    body {
+      background-image: url(https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+      background-size: 100%;
+      background-attachment: fixed;
+    }
+  </style>
+  <svg width = "100%" height = "100">
+    <rect width = "100%" height = "100%" style = "fill: blue; opacity: 0.8;"/>
+    <ellipse cx = "50%" cy = "50%" rx = "50%" ry= "50%" style = "fill: lightblue; stroke: purple; stroke-width: 1; opacity: 0.5;" />
+    <text x="50%" y="50%" text-anchor="middle" stroke="#e460ff" stroke-width="1px" dy=".3em">
+      <a href = "index.html"> Home page </a>
+      &nbsp; &nbsp; &nbsp;
+      <a href = "page2.html"> Photos </a>
+      &nbsp; &nbsp; &nbsp;
+      <a href = "page4.html"> Fun Page </a>
+      &nbsp; &nbsp; &nbsp;
+      <a href = "http://www.wpi.edu" target = "_blank"> WPI home page </a>
+    </text>
+  </svg>
+  <h1><div id = "heading" style = "color:#ffdbd3; position: relative; margin-top: 5%;">
+    Fun Page
+  </div></h1>
+  <button onclick = "toggleColor2('heading', 'green', '#ffdbd3');"> Change Color of Heading </button>
+  <!-- <input type = "button" value = "change color" onlick = "ChangeColor()"> </input> -->
+  <br /> <br />
+  <button onclick = "toggleColor2('clickableContent', 'green', '#ffdbd3');"> Change Color of Text </button>
+  <br /> <br />
+  <form name = "clickableContent" id = "clickableContent" style = "color : #ffdbd3; font-family: 'arial black', sans-serif; font-size: 12pt;">
+    <p>
+      Enter fullname (including nickname)
+    </p>
+    <input type = "text" size = "40" maxlength = "40" placeholder = "Name" value = "John Smith" />
+    <p>
+      Enter password
+    </p>
+    <input type = "password" size = "40" maxlength = "30" placeholder = "Password" />
+    <br />
+    <p>
+      Select what applies to you:
+    </p>
+    <p>I like cats: <input type = "checkbox" />
+    <br />
+    I like dogs: <input type = "checkbox" />
+    <br />
+    I like animals: <input type = "checkbox" />
+    <br />
+    I want to go to space: <input type = "checkbox" />
+    <br />
+    I like nature: <input type = "checkbox" />
+    <br />
+    I like anime: <input type = "checkbox" />
+    <br /> <br />
+    On a scale or 1 to 5, how are you?
+    <br />
+    <input name = "feel" type = "radio" /> 1
+      <input name = "feel" type = "radio" /> 2
+      <input name = "feel" type = "radio" /> 3
+      <input name = "feel" type = "radio" /> 4
+      <input name = "feel" type = "radio" /> 5
+    <br /><br /></p>
+    <input type = "reset" value = "Reset answers" />
+    <br />
+  </form>
+  <p style = "color: #ffdbd3;">
+    Game: Get to the green circle without touching blue
+  </p>
+  <br />
+  <a href = "a_game.html" target = "_blank"> <b>Game in a new tab</b> </a>
+  <br /> <br />
+  <svg width = "600" height = "400px">
+    <rect onmousemove = "alert('!!!!');" width = "100%" height = "100%" style = "fill: blue;"/>
+    <polygon points = "0,200 0,230 400,200" style = "fill: purple;" />
+    <polygon points = "400,200 300,119 300,201" style = "fill: purple;" />
+    <polygon points = "600,0 600,150 300,0" style = "fill: purple;" />
+    <polygon points = "600,400 600,250 300,400" style = "fill: purple;" />
+    <polygon points = "0,0 300,0 0,150" style = "fill: purple;" />
+    <polygon points = "0,400 300,400 0,250" style = "fill: purple;" />
+    <circle onmousemove = "alert('Congratulations!!! :)');" cx="300" cy="100" r="20" fill ="green" >
+  </svg>
+  <br /> <br />
+</body>
+</html>

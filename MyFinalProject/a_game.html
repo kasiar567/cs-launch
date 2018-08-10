@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+  <html>
+    <head>
+      <title>
+        A... game?
+      </title>
+    </head>
+    <body style = "text-align: center;">
+      <p>
+        Get to the green circle without touching blue
+      </p>
+      <br />
+      <svg width = "600" height = "400px">
+        <rect onmousemove = "alert('!!!!');" width = "100%" height = "100%" style = "fill: blue;"/>
+        <polygon points = "0,200 0,230 400,200" style = "fill: purple;" />
+        <polygon points = "400,200 300,119 300,201" style = "fill: purple;" />
+        <polygon points = "600,0 600,150 300,0" style = "fill: purple;" />
+        <polygon points = "600,400 600,250 300,400" style = "fill: purple;" />
+        <polygon points = "0,0 300,0 0,150" style = "fill: purple;" />
+        <polygon points = "0,400 300,400 0,250" style = "fill: purple;" />
+        <circle onmousemove = "alert('Congratulations!!! :)');" cx="300" cy="100" r="20" fill ="green" >
+      </svg>
+    </body>
+  </html>

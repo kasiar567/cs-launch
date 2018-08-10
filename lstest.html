@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Local Storage Test</title>
+
+  <script type="text/javascript">
+  var arr = new Array;
+
+  /* Initiailization -- Called on page load */
+  function init() {
+    console.log("typeof(Storage) = " + typeof(Storage));
+
+  }
+
+
+  /* Adds the input field to the array and the output field */
+  function add() {
+    infield = document.getElementById("in");
+    arr.push(infield.value);
+
+    outfield = document.getElementById("out");
+
+    if (outfield.value == null) {
+      outfield.value = infield.value;
+    } else if (outfield.value.length == 0) {
+      outfield.value = infield.value;
+    } else {
+      outfield.value = outfield.value + "," + infield.value;
+    }
+  }
+
+  /* Clears the output field */
+  function outclear() {
+    outfield = document.getElementById("out");
+    outfield.value = "";
+    arr = new Array;
+  }
+
+  /* Saves outfield to local storage "foo"*/
+  function saveText() {
+    outfield = document.getElementById("out");
+    localStorage.setItem("foo", outfield.value);
+  }
+
+  /* Retrieves from local storage "foo" */
+  function retrieveText() {
+    foofield = document.getElementById("foo");
+    var val = localStorage.getItem("foo");
+    if (val != null) {
+      foofield.value = val;
+    } else {
+      foofield.value = "NULL";
+    }
+  }
+
+  /* Saves array arr to local storage "bar" */
+  function saveArray() {
+    var i; // Loop counter
+    var s = ""; // Accumulate string here
+    localStorage.removeItem("bar");
+    console.log("Saving: arr.length = " + arr.length);
+    for (i = 0; i < arr.length; i++) {
+      if (s.length == 0) {
+        s = arr[i];
+      } else {
+        s = s + "," + arr[i];
+      }
+      localStorage.setItem("bar",s); // Put into storage
+    }
+  }
+
+  /* Retrieves array arr from local storage "bar" */
+  function retrieveArray() {
+    var s = localStorage.getItem("bar");
+    if (s != null) {
+      console.log("Retrieving: length = " + s.length);
+      document.getElementById("bar").value = s;
+      var arr = s.split(",");
+      var j;
+      var s2 = "";
+      for (j = 0; j < arr.length; j++) { // Turn into a list
+        s2 = s2 + "<li>" + arr[j] + "</li>";
+      }
+      document.getElementById("barlist").innerHTML = s2;
+    } else {
+      // Nothing was retrieved
+      console.log("Retrieving: NULL");
+      document.getElementById("bar").value = "NULL";
+      document.getElementById("barlist").innerHTML = "NULL";
+    }
+  }
+
+
+
+  </script>
+</head>
+
+<body onload="init();">
+
+  <form>
+    Input: <input id="in" type="text" />
+    <br/>
+    Output: <input id="out" type="text" />
+    <br/>
+    localStorage "foo": <input id="foo" type="text" />
+    <br/>
+    localStorage "bar": <input id="bar" type="text" />
+
+  </form>
+
+  <button type="button" onclick="add();">Add</button>
+  <button type="button" onclick="outclear();">Clear</button>
+  <button type="button" onclick="retrieveText();">Retrieve Text</button>
+  <button type="button" onclick="saveText();">Save Text</button>
+  <button type="button" onclick="retrieveArray();">Retrieve Array</button>
+  <button type="button" onclick="saveArray();">Save Array</button>
+
+</body>
+<br />
+Array as list:
+<ul id="barlist">
+</ul>
+
+</html>

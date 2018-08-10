@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ciaraldi's Pong Program</title>
+  <script type="text/javascript" src="pong.js">
+  </script>
+</head>
+
+<body id = "body" onload="makeField();">
+Pong court:
+<br />
+
+<svg id = "svgPane" width="500" height="300" style="fill:rgb(0,255,0)">
+This browser does not support SVG.
+<!-- Use JavaScript to draw court and everything in it. -->
+</svg>
+
+<br />
+
+<input type="button" value = "New Game" onclick="startPlay();" />
+<input type="button" value = "Serve" onclick="serve();" />
+<input type="button" value = "Stop" onclick="stop();" />
+<input type="button" value = "Reset" onclick="fullReset();" />
+<input type="button" value = "Demo" onclick="startDemo();" />
+<br />
+<input type="button" value = "leftPaddle Up" 
+   onclick="leftPaddle.moveVertical(-PADDLE_INCREMENT);" />
+<input type="button" value = "leftPaddle Down" 
+   onclick="leftPaddle.moveVertical(PADDLE_INCREMENT);" />
+<input type="button" value = "rightPaddle Up" 
+   onclick="rightPaddle.moveVertical(-PADDLE_INCREMENT);" />
+<input type="button" value = "rightPaddle Down" 
+   onclick="rightPaddle.moveVertical(PADDLE_INCREMENT);" />
+<br />
+Type to move paddles: 'w' and 's' to move left paddle up and down,
+'p' and 'l' to move right paddle up and down.
+</body>
+
+</html>

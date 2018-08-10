@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- mover.html
+     Illustrates moving an element within a document
+     -->
+<html>
+<head>
+<title> Moving elements </title>
+<script type = "text/javascript">
+<!--
+// ***************************************************** //
+/* The event handler function to move an element */
+
+   function moveIt(movee, newTop, newLeft) {
+
+       dom = document.getElementById(movee).style;
+
+/* Change the top and left properties to perform the move
+   Note the addition of units to the input values */
+
+       dom.top = newTop + "px";
+       dom.left = newLeft + "px";
+   }
+// ***************************************************** //
+// -->
+</script>
+</head>
+
+<body>
+   <form action = "">
+      <p>
+      x coordinate: <input type = "text"  id = "leftCoord"
+                           size = "3" />
+      <br />
+      y coordinate: <input type = "text"  id = "topCoord"
+                           size = "3" />
+      <br />
+      <input type = "button"  value = "Move it"
+             onclick =
+         "moveIt('frog',
+                document.getElementById('topCoord').value,
+                document.getElementById('leftCoord').value)" />
+      </p>
+   </form>
+
+   <div id = "frog"  style = "position: absolute;
+        top: 115px; left: 0;">
+      <img src = "frog1.jpg" style="width: 100px;"
+           alt = "(Picture of frog)" />
+   </div>
+
+</body>
+</html>

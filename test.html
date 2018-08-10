@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script type = "text/javascript">
+  //function for button will change color of button
+  // Finds the tag with specified id and changes its color.
+  function ChangeColor (id, newColor) {
+    console.log('clicked')
+    element = document.getElementById(id);
+    element.style.color = newColor;
+  }
+  </script>
+</head>
+<body>
+  <div id = "heading" style = "color: blue; position: relative;">
+    <h1> TEST </h1>
+  </div>
+  <button onclick = "ChangeColor('heading', 'green')"> Change color </button>
+  <!-- <input type = "button" value = "change color" onlick = "ChangeColor()"> </input> -->
+</body>
+</html>

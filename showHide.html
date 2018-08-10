@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<!-- showHide.html
+     Illustrates visibility control of elements
+     -->
+<html>
+<head>
+<title> Visibility control </title>
+<script type = "text/javascript">
+// ******************************************************** //
+// The event handler function to toggle the visibility
+//    of the frog image
+
+   function flipImag() {
+
+       frog = document.getElementById("frog");
+       dom = frog.style;
+
+// Flip the visibility adjective to whatever it is not now
+
+       if (dom.visibility == "visible")
+           dom.visibility = "hidden";
+       else
+           dom.visibility = "visible";
+   }
+// ******************************************************** //
+</script>
+</head>
+<body>
+   <form action = "">
+      <div id = "frog"  style = "position: relative;
+           visibility: visible;">
+      <img src = "frog1.jpg" style="width: 100px;" 
+           alt = "(Picture of frog)" />
+      </div>
+      <p>
+      <br />
+      <input type = "button"  value = "Toggle frog"
+             onclick = "flipImag()" />
+      </p>
+   </form>
+</body>
+</html>

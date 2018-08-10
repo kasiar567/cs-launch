@@ -1,0 +1,28 @@
+<!DOCTYPE html >
+<html>
+<head>  <title>Real roots of a quadratic equation </title> </head>
+<body>
+<script type = "text/javascript">
+// Get the coefficients of the equation from the user
+      var a = prompt("What is the value of 'a'? \n", "");
+      var b = prompt("What is the value of 'b'? \n", "");
+      var c = prompt("What is the value of 'c'? \n", "");
+// Compute the square root and denominator of the result
+      var z = (b * b - 4.0 * a * c);
+//What will happen if value in the square is less than 0, AKA if it is a negative number.
+      if (z < 0) {
+        document.write("There is no answer.<br />");
+      }
+//What will happen if the value in the square is greater than 0. This would probably happen in most instances.
+      else {
+        var root_part = Math.sqrt(z);
+        var denom = 2.0 * a;
+// Compute and display the two roots
+        var root1 = (-b + root_part) / denom;
+        var root2 = (-b - root_part) / denom;
+        document.write("The first root is: ", root1, "<br />");
+        document.write("The second root is: ", root2, "<br />");
+    }
+    </script>
+</body>
+</html>
